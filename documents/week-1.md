@@ -88,3 +88,22 @@ cd frontend && npm run dev        # 终端 B:前端,打开它给出的 http://lo
 | Element Plus(UI 组件库) | 前端界面 | https://element-plus.org/zh-CN/ |
 | 向量数据库 | 存上传的资料 | https://github.com/philippgille/chromem-go |
 | 大模型 / 本地模型 | 回答问题 | https://ollama.com/ |
+
+# Day 2 · 开发前端页面
+
+To-Oo
+
+1.  修改前端启动页面
+2.  布局设计（参考Claude/ChatGPT布局）
+3.  从Element Plus中选取合适的UI组件
+4.  实现前端页面
+
+## 注册Element Plus
+
+参考[Quick Start](https://element-plus.org/en-US/guide/quickstart)
+
+## 添加组件
+
+container/button/header/input..
+
+# Day 2 · 开发后端接口

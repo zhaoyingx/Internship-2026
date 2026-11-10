@@ -87,3 +87,22 @@ The project uses the following. If you're not familiar with one, skim its docs f
 | Element Plus (UI library) | frontend UI | https://element-plus.org/en-US/ |
 | Vector database | storing uploaded files | https://github.com/philippgille/chromem-go |
 | LLMs / local models | answering questions | https://ollama.com/ |
+
+# Day 2 · Build the frontend page
+
+To-Do
+
+1. Replace the default frontend landing page
+2. Design the layout (take Claude / ChatGPT as reference)
+3. Pick suitable UI components from Element Plus
+4. Implement the frontend page
+
+## Register Element Plus
+
+See [Quick Start](https://element-plus.org/en-US/guide/quickstart)
+
+## Add components
+
+container / button / header / input ...
+
+# Day 2 · Build the backend API
