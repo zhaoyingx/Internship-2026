@@ -89,6 +89,12 @@ cd frontend && npm run dev        # 终端 B:前端,打开它给出的 http://lo
 | 向量数据库 | 存上传的资料 | https://github.com/philippgille/chromem-go |
 | 大模型 / 本地模型 | 回答问题 | https://ollama.com/ |
 
+## 掌握内容
+
+1.  环境搭建
+2.  前端开发基础知识
+3.  typescript语法
+
 # Day 2 · 开发前端页面
 
 To-Oo
@@ -105,5 +111,14 @@ To-Oo
 ## 添加组件
 
 container/button/header/input..
+
+工程设计参考文档：[Components Basics](https://vuejs.org/guide/essentials/component-basics.html)
+
+## 掌握知识点
+
+1.  如何在vue中使用ui-Framework，如Element Plus
+2.  基础UI组件的使用
+3.  前端工程设计规范，重点阅读[Components Basics](https://vuejs.org/guide/essentials/component-basics.html)
+
 
 # Day 2 · 开发后端接口

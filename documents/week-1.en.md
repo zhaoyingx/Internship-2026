@@ -88,6 +88,12 @@ The project uses the following. If you're not familiar with one, skim its docs f
 | Vector database | storing uploaded files | https://github.com/philippgille/chromem-go |
 | LLMs / local models | answering questions | https://ollama.com/ |
 
+## What you'll master
+
+1. Setting up the environment
+2. Frontend development fundamentals
+3. TypeScript syntax
+
 # Day 2 · Build the frontend page
 
 To-Do
@@ -104,5 +110,13 @@ See [Quick Start](https://element-plus.org/en-US/guide/quickstart)
 ## Add components
 
 container / button / header / input ...
+
+Engineering reference: [Components Basics](https://vuejs.org/guide/essentials/component-basics.html)
+
+## Key concepts to master
+
+1. How to use a UI framework like Element Plus in Vue
+2. Using the basic UI components
+3. Frontend project design conventions — read [Components Basics](https://vuejs.org/guide/essentials/component-basics.html) carefully
 
 # Day 2 · Build the backend API
