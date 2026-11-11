@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import type { Session, Message } from './types'
 import ChatSidebar from './components/ChatSidebar.vue'
 import MessageList from './components/MessageList.vue'
@@ -44,13 +44,26 @@ function newSession() {
 function handleSend(text: string) {
   messages.value.push({ role: 'user', content: text })
 }
+
+const backendStatus = ref('connecting to server')
+
+onMounted(async () => {
+  try {
+    const res = await fetch('/api/hello')
+    const data = await res.json()
+    backendStatus.value = data.message
+  } catch {
+    backendStatus.value = 'backend not reachable'
+  }
+})
 </script>
 
 <template>
   <el-container class="app">
     <!-- Top bar (small enough to keep inline) -->
     <el-header class="topbar">
-      <span class="logo">🤖 Local Knowledge Q&A</span>
+      <span class="logo">Local Knowledge Q&A</span>
+      <span class="backend-status">backend: {{ backendStatus }}</span>
     </el-header>
 
     <el-container class="body">
@@ -84,6 +97,11 @@ function handleSend(text: string) {
 .logo {
   font-size: 18px;
   font-weight: 600;
+}
+.backend-status {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--el-color-info);
 }
 
 .body {
