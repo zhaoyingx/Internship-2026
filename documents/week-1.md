@@ -141,3 +141,9 @@ container/button/header/input..
 2.  整理工程结构
 3.  前端配置，打通前后端的请求
 4.  前端可以把后端的内容显示在页面上
+
+## 后续
+
+1.  参考main.go的实现，完成前端内容的展示
+2.  了解下[go gin](https://github.com/gin-gonic/gin), 接口改用gin实现
+3.  了解下前端await用法，可以自己Google，自己总结下理解

@@ -139,3 +139,9 @@ Get comfortable with basic Go syntax, and work through the first half of the Sam
 2. Organize the project structure
 3. Configure the frontend, wire up requests between frontend and backend
 4. The frontend can display the backend's content on the page
+
+## Next steps
+
+1. Following the `main.go` implementation, finish displaying the content on the frontend
+2. Take a look at [go gin](https://github.com/gin-gonic/gin), and reimplement the endpoint using gin
+3. Look into how `await` works on the frontend — feel free to Google it, then write up your own understanding
