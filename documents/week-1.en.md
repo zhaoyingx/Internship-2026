@@ -119,4 +119,23 @@ Engineering reference: [Components Basics](https://vuejs.org/guide/essentials/co
 2. Using the basic UI components
 3. Frontend project design conventions — read [Components Basics](https://vuejs.org/guide/essentials/component-basics.html) carefully
 
-# Day 2 · Build the backend API
+# Day 2-3 · Build the backend API
+
+## Preparation
+
+### [Install](https://go.dev/doc/install)
+
+### Tutorials
+
+[Golang Tutorials](https://go.dev/doc/tutorial/)
+[A Tour of Go](https://go.dev/tour/welcome/1)
+[Sample Code](https://gobyexample.com/)
+
+Get comfortable with basic Go syntax, and work through the first half of the Sample Code on your own. You can create a separate GitHub repo to keep your Go-learning work.
+
+## Setting up the backend project
+
+1. Add an API file that returns some text
+2. Organize the project structure
+3. Configure the frontend, wire up requests between frontend and backend
+4. The frontend can display the backend's content on the page

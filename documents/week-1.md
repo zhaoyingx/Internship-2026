@@ -121,4 +121,23 @@ container/button/header/input..
 3.  前端工程设计规范，重点阅读[Components Basics](https://vuejs.org/guide/essentials/component-basics.html)
 
 
-# Day 2 · 开发后端接口
+# Day 2-3 · 开发后端接口
+
+## Preparation
+
+### [Install](https://go.dev/doc/install)
+
+### Tutorials
+
+[Golang Tutorials](https://go.dev/doc/tutorial/)
+[A tour of Go](https://go.dev/tour/welcome/1)
+[Sample Code](https://gobyexample.com/)
+
+掌握基础的Golang语法，独立完成Sample code中前半部分的基础内容，可以新建一个GitHub仓库，用来维护Go Learning部分的内容
+
+## backend项目建立
+
+1.  添加一个接口文件，返回文本内容
+2.  整理工程结构
+3.  前端配置，打通前后端的请求
+4.  前端可以把后端的内容显示在页面上
