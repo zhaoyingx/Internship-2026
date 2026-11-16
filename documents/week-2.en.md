@@ -1,3 +1,20 @@
+Key points this week
+
+# Frontend
+
+1. A shared low-level HTTP helper
+2. API design (write a markdown doc)
+3. Turn the API design into matching frontend request methods
+4. Replace the current HTTP requests in the frontend — e.g. loading history in the sidebar, use `getRecords`
+
+# Backend
+
+1. Backend project-structure design (markdown doc, with an architecture diagram)
+2. Database schema design (markdown doc)
+3. Create the corresponding files
+4. Implement the endpoints
+5. ...
+
 # Day 1
 
 ## To-Do list
