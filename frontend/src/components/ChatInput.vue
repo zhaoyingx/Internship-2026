@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { addRecord } from '../api/record'
 
 // Owns its own draft text; tells the parent when the user sends
 const emit = defineEmits<{
@@ -11,8 +12,13 @@ const text = ref('')
 function submit() {
   const t = text.value.trim()
   if (!t) return
-  emit('send', t)
+  emit('send', t) // update the chat UI right away
   text.value = ''
+  addRecord(t) // POST the text to the backend
+    .then(() => {})
+    .catch(() => {
+      // backend endpoint not ready yet; ignore for now
+    })
 }
 </script>
 

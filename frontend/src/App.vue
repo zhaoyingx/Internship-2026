@@ -1,18 +1,13 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import type { Session, Message } from './types'
+import { ref, onMounted, useTemplateRef } from 'vue'
+import type { Message } from './types'
 import ChatSidebar from './components/ChatSidebar.vue'
 import MessageList from './components/MessageList.vue'
 import ChatInput from './components/ChatInput.vue'
+import api from './api/http'
+import { getRecordById } from './api/record'
 
-// —— State lives here in the parent; children get it via props ——
-// —— local mock data (for layout practice, no backend yet) ——
-const sessions = ref<Session[]>([
-  { id: 1, title: 'What is a vector database' },
-  { id: 2, title: 'Writing an HTTP server in Go' },
-  { id: 3, title: 'Summarize this note for me' },
-])
-const currentId = ref(1)
+const sidebar = useTemplateRef('sidebar')
 
 const messages = ref<Message[]>([
   { role: 'user', content: 'Hi, can you explain what a vector database is?' },
@@ -30,31 +25,40 @@ const messages = ref<Message[]>([
 ])
 
 function selectSession(id: number) {
-  currentId.value = id
+  // Owner of the current conversation: fetch the selected record's content
+  getRecordById(id)
+    .then((record) => {
+      // Simplified for now: show the record's content as one message.
+      // Later this becomes "load this session's full message list".
+      messages.value = [{ role: 'user', content: record.content }]
+    })
+    .catch(() => {
+      messages.value = []
+    })
 }
 
-function newSession() {
-  const id = Date.now()
-  sessions.value.unshift({ id, title: 'New chat' })
-  currentId.value = id
+function clearChat() {
   messages.value = []
 }
 
-// For now just push the message into the list; no backend yet
 function handleSend(text: string) {
+  // ChatInput already POSTed; here we just update the visible chat
   messages.value.push({ role: 'user', content: text })
+  // refresh the sidebar history so the new record shows up
+  sidebar.value?.loadHistory()
 }
 
 const backendStatus = ref('connecting to server')
 
-onMounted(async () => {
-  try {
-    const res = await fetch('/api/hello')
-    const data = await res.json()
-    backendStatus.value = data.message
-  } catch {
-    backendStatus.value = 'backend not reachable'
-  }
+onMounted(() => {
+  api
+    .get<{ message: string }>('/hello')
+    .then((data) => {
+      backendStatus.value = data.message
+    })
+    .catch(() => {
+      backendStatus.value = 'backend not reachable'
+    })
 })
 </script>
 
@@ -68,10 +72,9 @@ onMounted(async () => {
 
     <el-container class="body">
       <ChatSidebar
-        :sessions="sessions"
-        :current-id="currentId"
+        ref="sidebar"
         @select="selectSession"
-        @create="newSession"
+        @create="clearChat"
       />
 
       <el-container class="chat">

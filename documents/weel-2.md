@@ -24,9 +24,27 @@ GET /api/record
 
 ```json
 [
-  { "recordId": 1, "content": "第一条记录" },
-  { "recordId": 2, "content": "第二条记录" }
+  { "id": 1, "content": "第一条记录" },
+  { "id": 2, "content": "第二条记录" }
 ]
+```
+
+### /api/record?id={id}
+
+| 方法 | 请求参数 |
+| --- | --- |
+| GET | `id` |
+
+请求示例：
+
+```
+GET /api/record?id=1
+```
+
+返回内容：
+
+```json
+{ "id": 1, "content": "第一条记录" }
 ```
 
 ### /api/add
@@ -46,19 +64,19 @@ POST /api/add
 返回内容：
 
 ```json
-{ "recordId": 3, "content": "这是一段文本" }
+{ "id": 3, "content": "这是一段文本" }
 ```
 
-### /api/delete
+### /api/delete?id={id}
 
 | 方法 | 请求参数 |
 | --- | --- |
-| DELETE | `recordId` |
+| DELETE | `id` |
 
 请求示例：
 
 ```
-DELETE /api/delete?recordId=3
+DELETE /api/delete?id=3
 ```
 
 返回内容：
