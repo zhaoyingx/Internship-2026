@@ -101,3 +101,11 @@ Response:
 ```json
 { "ok": true }
 ```
+
+# Day 2
+
+## To-Do list
+
+1. Add the network layer — create a new `handler.go` and put the network-layer methods there.
+2. Install Apifox, learn how to debug backend endpoints and inspect their responses.
+3. Frontend–backend integration.

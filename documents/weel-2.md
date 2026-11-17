@@ -101,3 +101,9 @@ DELETE /api/delete?id=3
 ```json
 { "ok": true }
 ```
+
+# Day 2
+## To-Do list
+1.  添加网络层——新增一个handler.go， 添加网络层方法
+2.  安装apifox，学习如何调试后端接口，看后端返回结果
+3.  前后端联调
